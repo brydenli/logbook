@@ -1,0 +1,25 @@
+To Do:
+- setup the skeleton for Log2 (model, route, components, main.component)
+- refactor Date to use DatePicker plugin
+- include Time (plugin?)
+- Want to log all Todos for the day into 1 Log object which can be opened to see the Todos of the day
+- add Completed? in Todos
+
+Todos
+    List
+
+Logs
+    List of Todo Lists by Date (can be opened)
+    - Each one is a snapshot of the Todo List of each saved day
+
+- idea is that the Todos are per day, therefore should be cleared and remade on a daily basis\
+
+- Save button for the Todos -> when pressed will create a new "Log2" with the snapshot of all the Todos from the day
+- will require a GET from todos and a POST to "Log2"
+- should also have an update button -> just overwrite the previous data for the Date
+- 
+
+Calendar:
+- Add a calendar to access logs from previous dates?
+- Using DatePicker plugin
+
