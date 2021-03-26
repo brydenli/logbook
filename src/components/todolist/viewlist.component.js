@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-//refer to exercises-list for how to use Link to link to the snapshot links
-
 const Snapshots = (props) => (
 	<tr>
 		<td>{props.snapshot._id}</td>

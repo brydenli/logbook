@@ -4,8 +4,6 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Link } from 'react-router-dom';
 
-//refer to exercises-list for how to use Link to link to the snapshot links
-
 const TodoList = (props) => (
 	<tr>
 		<td>{props.todolist.date}</td>
@@ -41,10 +39,7 @@ export default class TodoListList extends Component {
 		this.onChangeName = this.onChangeName.bind(this);
 		this.onDelete = this.onDelete.bind(this);
 		this.onChangeDate = this.onChangeDate.bind(this);
-		// this.onChangeTodos = this.onChangeTask.bind(this);
-		// this.onChangeDescription = this.onChangeDescription.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
-		// this.onUpdate = this.onUpdate.bind(this);
 		this.todoListList = this.todoListList.bind(this);
 	}
 
@@ -76,8 +71,6 @@ export default class TodoListList extends Component {
 				console.log(err);
 			});
 
-		//need to add logic to GET previous snapshots into an array (axios), THEN use the this.state.(array).map to generate list
-
 		axios
 			.get('http://localhost:4001/todolist')
 			.then((res) => {
@@ -98,59 +91,6 @@ export default class TodoListList extends Component {
 			});
 	}
 
-	// componentDidMount is the same as onUpdate but doesn't have the e.preventDefault()... if this creates issues, consider switching back from componentDidMount back to onUpdate but try figuring out way to get prevent default with componentDidMount first
-
-	// onUpdate(e) {
-	// 	e.preventDefault();
-	// 	let temp = {};
-	// 	let temp1 = {};
-	// 	console.log('stage uno complete');
-
-	// 	axios
-	// 		.get('http://localhost:4001/todos/')
-	// 		.then((resArr) => {
-	// 			console.log(resArr);
-	// 			if (resArr.data.length > 0) {
-	// 				console.log('stage twuo complete');
-	// 				console.log(resArr.data);
-	// 				temp = resArr.data;
-	// 				console.log(`Temp is: ${temp}`);
-
-	// 				temp = temp.filter((e, index) => {
-	// 					return temp.indexOf(e) === index;
-	// 				});
-
-	// 				this.setState({
-	// 					todos: temp,
-	// 				});
-	// 			}
-	// 		})
-	// 		.catch((err) => {
-	// 			console.log(err);
-	// 		});
-
-	// 	//need to add logic to GET previous snapshots into an array (axios), THEN use the this.state.(array).map to generate list
-
-	// 	axios
-	// 		.get('http://localhost:4001/todolist')
-	// 		.then((res) => {
-	// 			console.log(res);
-	// 			if (res.data.length > 0) {
-	// 				console.log('inside the GET if statement');
-	// 				console.log(res.data);
-	// 				temp1 = res.data;
-	// 				console.log(`Temp1 is: ${temp1}`);
-
-	// 				this.setState({
-	// 					todolists: temp1,
-	// 				});
-	// 			}
-	// 		})
-	// 		.catch((err) => {
-	// 			console.log(err);
-	// 		});
-	// }
-
 	onChangeDate(date) {
 		this.setState({ date: date });
 	}
@@ -170,7 +110,6 @@ export default class TodoListList extends Component {
 	}
 
 	onSubmit(e) {
-		//figure out how to perform the get method with axios for all todos stored in the db
 		e.preventDefault();
 
 		let temp = {};
@@ -214,10 +153,6 @@ export default class TodoListList extends Component {
 	}
 
 	todoListList() {
-		// let uniqueArr = this.state.todos.filter((v, i, a) => {
-		// 	a.indexOf(v) === i;
-		// });
-
 		return this.state.todolists.map((currentdate) => {
 			return (
 				<TodoList
@@ -269,17 +204,6 @@ export default class TodoListList extends Component {
 					</div>
 				</div>
 				<form onSubmit={this.onSubmit}>
-					{/* <div className='form-group'>
-						<label>Date: </label>
-						<input
-							type='text'
-							required
-							className='form-control'
-							value={this.state.date}
-							onChange={this.onChangeDate}
-						></input>
-					</div> */}
-
 					<div className='form-group'>
 						<input
 							type='submit'
@@ -288,13 +212,6 @@ export default class TodoListList extends Component {
 						></input>
 					</div>
 				</form>
-				{/* <button
-					className='btn btn-primary'
-					onClick={this.onUpdate}
-					value='Update'
-				>
-					Update
-				</button> */}
 			</div>
 		);
 	}
