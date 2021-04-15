@@ -6,6 +6,7 @@ const Idea = (props) => (
 	<tr>
 		<td>{props.idea.name}</td>
 		<td>{props.idea.description}</td>
+		<td>{props.idea.notes}</td>
 		<td>{props.idea.status}</td>
 		<td>
 			<Link to={'/ideas/update/' + props.idea._id}>edit </Link>
