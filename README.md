@@ -4,4 +4,4 @@ Web application for Logging Tasks and Ideas using React, Express.js, Node.js, Mo
 
 ## Application Features:
 1. Log tasks and ideas (date, description, notes, urgency, status)
-2. Includes functionality to save current Task List in an archive
+2. Save current task list in an archive
