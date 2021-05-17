@@ -1,6 +1,6 @@
 # logbook
 
-Web application for Logging Tasks and Ideas using React, Express.js, Node.js, MongoDB Atlas
+Web application for Logging Tasks and Ideas using React, Express, Node, MongoDB Atlas
 
 ## Application Features:
 1. Log tasks and ideas (date, description, notes, urgency, status)
